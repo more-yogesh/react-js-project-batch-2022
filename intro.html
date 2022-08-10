@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .form-input-green {
+            border-radius: 2px;
+            padding: 2px;
+            border: 5px solid greenyellow;
+        }
+
+        .form-input-red {
+            border-radius: 2px;
+            padding: 2px;
+            border: 5px solid rgb(255, 109, 47);
+        } */
+
+        .form-control {
+            border-radius: 2px;
+            padding: 2px;
+        }
+
+        .red {
+            border: 5px solid rgb(255, 109, 47);
+        }
+
+        .green {
+            border: 5px solid greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="" class="">
+        <form action="" method="post">
+            <!-- <input type="email" name="email" onclick="this.style.border='1px solid green';" id="email" -->
+            <input type="email" name="email" onclick="letsCheckThis(this)" id="email" class="form-control green">
+            <button>SUBSCRIBE</button>
+        </form>
+
+
+
+        <div id="datas"></div>
+
+        <!--
+            id vs class
+        -->
+        <!-- <p id="name" class="test test2 test3">Name</p>
+        <p id="name" class="test">Full Name</p> -->
+        <!-- <input type="text" name="fname" />
+        <input type="text" name="lname" /> -->
+        <!-- <form action="" method="post">
+            <input type="tel" name="number" id="">
+            <input type="submit" value="Submit">
+            <button>Submit</button>
+        </form> -->
+    </div>
+    <script>
+
+        // .js --- .ts
+
+        // x;// gloabal variable
+        // var x;// local variable can be declare again and again
+        // let x;// local variable can be declare only once
+        // const x;// constant static/fix value
+
+        // var a = 10;
+        // var a = 30;
+
+        // let b= 10;
+        // let b =10;
+
+        // const breakUp = (arg) => {
+        //     // x = 'he was smart';
+        //     return arg;
+        // }
+
+        // console.log("THIS IS BREAK VALUE:", breakUp(123));
+        // console.log("THIS IS BREAK VALUE:", breakUp(152));
+
+        // const findMyX = () => {
+
+        //     console.log("Characterstics of my x: ", x);
+        // }
+
+        // breakUp();
+        // findMyX();
+
+        // function letsCheckThis(arg) {
+        //     console.log(arg);
+        // }
+
+        // const letsCheckThis = (arg) => {
+        //     console.log(arg.id);
+        // }
+        // const letsCheckThis = arg => {
+        //     console.log(arg);
+        // }
+        // const letsCheckThis = arg => console.log(arg);
+
+        let team = 10;
+
+        // let totalScore = 1560;
+
+        let avg = 50.50;
+
+        let teams = ['india', 1, 'aus', ['as1', 'as2']];
+
+        let dhoni = {
+            centuries: 120,
+            fifties: 250,
+            total: 18500
+        };
+
+        console.log("100s:", dhoni.centuries);
+
+        console.log(teams[3][1]);
+
+        // let teams = ['india':{['dhoni', 'virat']}];
+
+        let newTeams = [
+            {
+                name: 'india',
+                data: {
+                    players: [{ name: 'dhoni', age: 38 }, { name: 'virat', age: 34 }],
+                    win: 10,
+                    loose: 1
+                }
+            },
+            {
+                name: 'aus',
+                data: {
+                    players: [{ name: 'dhoni', age: 38 }, { name: 'virat', age: 34 }],
+                    win: 10,
+                    loose: 1
+                }
+            },
+            {
+                name: 'england',
+                data: {
+                    players: [{ name: 'stiv', age: 38 }, { name: 'waugh', age: 34 }],
+                    win: 10,
+                    loose: 100
+                }
+            },
+        ];
+
+
+        // console.log("newTeams", newTeams[2].england.players[1].age);
+        // console.log("newTeams", newTeams[2].england.loose);
+
+        // newTeams.forEach(team => {
+        //     console.log("team", team.name);
+        //     team.data.players.forEach(player => {
+        //         console.log(player.name);
+        //     })
+        //     console.log("team", team.data.win);
+        // });
+
+        let teamHtml = '';
+        newTeams.forEach((team, key) => {
+            // console.log(team, key);
+            let index = key + 1
+            // teamHtml += '<b>' + index + '.' + team.name + '</b><hr/>';
+            teamHtml += `
+                <b>
+                    ${key + 1}.${team.name}
+                </b>
+            <hr>`;
+        });
+        document.getElementById('datas').innerHTML = teamHtml;
+        document.getElementById('datas').innerHTML = teamHtml;
+    </script>
+</body>
+
+</html>
